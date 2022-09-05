@@ -4,14 +4,20 @@
 
     .login-container {
         border: 1px solid rgb(206, 25, 25);
-        width: 400px;
+        width: 350px;
+        height: 450px;
         margin: 0 auto;
         border-radius: 10px;
         background: white;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
 
         .login-conten {
             padding: 10px;
-
+          
             .social-login {
                 text-align: center;
 
@@ -38,4 +44,16 @@
             background: linear-gradient(135deg, rgba(34, 193, 195, 1) 0%, rgba(253, 187, 45, 1) 100%);
         }
     }
+}
+.custom-input-passwor{
+    position: relative;
+    border-top: 1px solid rgb(17, 0, 255)
+   
+}
+.custom-input-passwor i{
+    position:absolute;
+  right: 5px;
+  top: 10px;
+  cursor: pointer;
+
 }

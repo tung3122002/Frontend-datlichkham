@@ -10,9 +10,28 @@ class Login extends Component {
 
     constructor(props) {
         super(props);
+        this.state = {
+            username: "",
+            password: "",
+            isShowPassword: false
+        }
+
     }
 
+    handlerUsername = (event) => {
+        this.setState({ username: event.target.value })
 
+    }
+    handerPassword = (event) => {
+        this.setState({ password: event.target.value })
+
+    }
+    handerLogin = () => {
+
+    }
+    showHide=()=>{
+       this.setState({isShowPassword: !this.state.isShowPassword})
+    }
     render() {
 
 
@@ -23,13 +42,28 @@ class Login extends Component {
                         <div className="col-12 text-center">LOGIN</div>
                         <div className="col-12 form-group">
                             <label>UserName:</label>
-                            <input type="text" className="form-control" />
+                            <input
+                                type="text"
+                                className="form-control"
+                                value={this.state.username}
+                                onChange={(event) => this.handlerUsername(event)} />
                         </div>
                         <div className="col-12 form-group">
                             <label>Password:</label>
-                            <input type="password" className="form-control" />
+                            <div className="custom-input-passwor">
+                                <input
+                                    type={this.state.isShowPassword ? "text" :"password"}
+                                    className="form-control"
+                                    value={this.state.password}
+                                    onChange={(event) => this.handerPassword(event)} />
+                             <span onClick={() => {this.showHide()}}>
+                             <i class={this.state.isShowPassword ? "fas fa-eye-slash " :"fas fa-eye"}></i>
+                             </span>
+                            </div>
+                            
+
                         </div>
-                        <button type="submit" className="btn  mt-3 ">Login</button>
+                        <button type="submit" className="btn  mt-3 " onClick={() => this.handerLogin()}>Login</button>
                         <div className="col-12 ">
                             <span>Forgot Password</span>
                         </div>
